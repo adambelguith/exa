@@ -1,4 +1,4 @@
-import { ReactNode } from 'react';
+import { ReactNode, CSSProperties } from 'react';
 
 interface ButtonProps {
   children: ReactNode;
@@ -7,6 +7,7 @@ interface ButtonProps {
   onClick?: () => void;
   href?: string;
   className?: string;
+  style?: CSSProperties;
 }
 
 export default function Button({
@@ -16,6 +17,7 @@ export default function Button({
   onClick,
   href,
   className = '',
+  style,
 }: ButtonProps) {
   const baseStyles = 'inline-block font-semibold rounded-lg transition-all duration-300 text-center shadow-md';
   
@@ -36,14 +38,14 @@ export default function Button({
 
   if (href) {
     return (
-      <a href={href} className={classes}>
+      <a href={href} className={classes} style={style}>
         {children}
       </a>
     );
   }
 
   return (
-    <button onClick={onClick} className={classes}>
+    <button onClick={onClick} className={classes} style={style}>
       {children}
     </button>
   );
