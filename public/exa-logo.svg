@@ -1,0 +1,23 @@
+<svg width="120" height="120" viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background Circle -->
+  <circle cx="60" cy="60" r="58" fill="url(#gradient)" stroke="white" stroke-width="4"/>
+  
+  <!-- Gradient Definition -->
+  <defs>
+    <linearGradient id="gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#ac1f2c;stop-opacity:1" />
+      <stop offset="50%" style="stop-color:#265b8f;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#46c0b5;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  
+  <!-- EXA Text -->
+  <text x="60" y="75" font-family="Arial, sans-serif" font-size="42" font-weight="bold" fill="white" text-anchor="middle">EXA</text>
+  
+  <!-- Graduation Cap Icon -->
+  <g transform="translate(60, 25)">
+    <path d="M0,-10 L15,-5 L15,5 L0,10 L-15,5 L-15,-5 Z" fill="white" opacity="0.9"/>
+    <path d="M-15,5 L-15,12 C-15,14 -10,16 0,16 C10,16 15,14 15,12 L15,5" fill="white" opacity="0.7"/>
+  </g>
+</svg>
+

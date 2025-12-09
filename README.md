@@ -1,36 +1,150 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# EXA - Expert Skills Academy
 
-## Getting Started
+Site web professionnel pour Expert Skills Academy, un centre de formation professionnelle moderne et innovant.
 
-First, run the development server:
+## 🎯 À Propos
+
+Expert Skills Academy (EXA) est un centre de formation dédié à l'excellence et au développement des compétences professionnelles. Notre site web présente nos offres de formation et notre expertise dans le domaine de la formation professionnelle.
+
+## ✨ Fonctionnalités
+
+- **Design Moderne & Responsive** : Interface utilisateur élégante avec une expérience optimale sur tous les appareils
+- **Animations Fluides** : Transitions et animations soignées pour une navigation agréable
+- **Slider Héro** : Présentation dynamique avec rotation automatique des messages clés
+- **Catalogue de Formations** : Filtrage par catégorie et présentation détaillée des programmes
+- **Formulaire de Contact** : Interface intuitive pour les demandes d'information
+- **Navigation Interactive** : Menu responsive avec animations et transitions
+
+## 🎨 Palette de Couleurs
+
+Le site utilise la charte graphique officielle d'EXA :
+
+- **Rouge Principal** : `#ac1f2c` - Pour les éléments d'accent et appels à l'action
+- **Bleu Principal** : `#265b8f` - Pour les titres et éléments de structure
+- **Turquoise** : `#46c0b5` - Pour les highlights et éléments interactifs
+- **Bleu Clair** : `#ecf6fd` - Pour les arrière-plans et sections
+
+## 🔤 Typographie
+
+- **Texte Occidental** : Axiforma - Police moderne et professionnelle
+- **Texte Arabe** : Jali - Police élégante pour le contenu arabe
+
+## 📄 Pages
+
+1. **Accueil** (`/`) - Page d'accueil avec slider héro, statistiques, et aperçu des formations
+2. **À Propos** (`/a-propos`) - Présentation du centre, valeurs, équipe, et historique
+3. **Nos Formations** (`/formations`) - Catalogue complet des formations avec filtres par catégorie
+4. **Contact** (`/contact`) - Formulaire de contact, informations pratiques, et FAQ
+
+## 🚀 Démarrage
+
+### Prérequis
+
+- Node.js 18+ 
+- npm ou yarn
+
+### Installation
 
 ```bash
+# Installer les dépendances
+npm install
+
+# Lancer le serveur de développement
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Ouvrez [http://localhost:3000](http://localhost:3000) dans votre navigateur.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### Build pour la Production
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```bash
+# Créer le build de production
+npm run build
 
-## Learn More
+# Lancer le serveur de production
+npm start
+```
 
-To learn more about Next.js, take a look at the following resources:
+## 🛠️ Technologies Utilisées
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- **Next.js 16** - Framework React pour la production
+- **React 19** - Bibliothèque UI
+- **TypeScript** - Typage statique
+- **Tailwind CSS 4** - Framework CSS utilitaire
+- **CSS Animations** - Animations personnalisées fluides
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## 📁 Structure du Projet
 
-## Deploy on Vercel
+```
+exa/
+├── app/
+│   ├── components/         # Composants réutilisables
+│   │   ├── Navigation.tsx  # Navigation avec menu responsive
+│   │   ├── Footer.tsx      # Pied de page
+│   │   ├── Button.tsx      # Bouton personnalisé
+│   │   ├── Card.tsx        # Carte de contenu
+│   │   └── SectionTitle.tsx # Titre de section
+│   ├── a-propos/           # Page À Propos
+│   ├── formations/         # Page Formations
+│   ├── contact/            # Page Contact
+│   ├── globals.css         # Styles globaux et animations
+│   ├── layout.tsx          # Layout principal
+│   └── page.tsx            # Page d'accueil
+├── public/                 # Fichiers statiques
+└── README.md
+```
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## 🎯 Composants Clés
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+### Navigation
+- Menu responsive avec toggle mobile
+- Animation au scroll
+- Liens avec effets hover personnalisés
+
+### Cards
+- Cartes avec hover effects
+- Bordures colorées personnalisables
+- Layout flexible
+
+### Buttons
+- Trois variantes : primary, secondary, outline
+- Trois tailles : small, medium, large
+- Animations hover et transitions
+
+### SectionTitle
+- Titres de section cohérents
+- Ligne décorative avec gradient
+- Alignement personnalisable
+
+## 🌐 Langue
+
+Le site est entièrement en **français**, adapté au marché francophone.
+
+## 📝 Personnalisation
+
+Pour personnaliser le site :
+
+1. **Couleurs** : Modifiez les variables CSS dans `app/globals.css`
+2. **Contenu** : Éditez directement les fichiers de page dans `app/`
+3. **Composants** : Ajoutez ou modifiez les composants dans `app/components/`
+4. **Logo** : Remplacez le logo dans la navigation (actuellement un placeholder EXA)
+
+## 🔜 Améliorations Futures
+
+- Intégration Google Maps pour la localisation
+- Système d'inscription en ligne
+- Espace étudiant avec authentification
+- Blog/Actualités
+- Témoignages vidéo
+- Galerie photos
+- Chat en direct
+
+## 📧 Contact
+
+Pour toute question concernant le site :
+- Email : contact@exa-formation.com
+- Téléphone : +212 522-123-456
+
+## 📄 Licence
+
+© 2024 Expert Skills Academy. Tous droits réservés.
