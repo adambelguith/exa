@@ -21,7 +21,7 @@ export default function Footer() {
               </div>
             </div>
             <p className="text-sm opacity-90 leading-relaxed">
-              Spécialisé en PMS (Project Management System), stratégie business et management pour startups en Tunisie.
+              Conseil en affaires, recrutement & GRH, et formation professionnelle en Tunisie.
             </p>
           </div>
 
@@ -37,6 +37,11 @@ export default function Footer() {
               <li>
                 <Link href="/a-propos" className="text-sm opacity-90 hover:opacity-100 hover:text-[#46c0b5] transition-colors">
                   À Propos
+                </Link>
+              </li>
+              <li>
+                <Link href="/prestations" className="text-sm opacity-90 hover:opacity-100 hover:text-[#46c0b5] transition-colors">
+                  Nos Prestations
                 </Link>
               </li>
               <li>

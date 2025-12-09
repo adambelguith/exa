@@ -19,6 +19,7 @@ export default function Navigation() {
   const navLinks = [
     { href: '/', label: 'Accueil' },
     { href: '/a-propos', label: 'À Propos' },
+    { href: '/prestations', label: 'Nos Prestations' },
     { href: '/formations', label: 'Nos Formations' },
     { href: '/contact', label: 'Contact' },
   ];

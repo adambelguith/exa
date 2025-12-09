@@ -33,7 +33,7 @@ export default function Contact() {
         name: '',
         email: '',
         phone: '',
-        formation: '',
+        service: '',
         message: '',
       });
     }, 3000);
@@ -83,18 +83,18 @@ export default function Contact() {
     },
   ];
 
-  const formations = [
-    "PMS - Project Management System",
-    "Stratégie Business & Management",
-    "Management pour Startups",
-    "Leadership & Gestion d'Équipe",
-    "Gestion de Projet Agile",
-    "Développement Web Full Stack",
-    "Marketing Digital",
-    "Data Science & Machine Learning",
-    "Design UX/UI",
-    "Cybersécurité",
-    "Anglais Professionnel",
+  const services = [
+    "Conseil en Affaires et Accompagnement",
+    "Recrutement IT et Gestion de Carrière",
+    "Conseil en GRH",
+    "Audit RH",
+    "Formation en Management",
+    "Formation en Leadership",
+    "Formation PMP",
+    "Pitching et Présentation de Projets",
+    "Coaching et TOT",
+    "Marketing Digital et Branding",
+    "Optimisation Profils LinkedIn",
     "Autre",
   ];
 
@@ -203,20 +203,20 @@ export default function Contact() {
                 </div>
 
                 <div>
-                  <label htmlFor="formation" className="block text-sm font-semibold text-gray-700 mb-2">
-                    Formation d'intérêt
+                  <label htmlFor="service" className="block text-sm font-semibold text-gray-700 mb-2">
+                    Service d'intérêt
                   </label>
                   <select
-                    id="formation"
-                    name="formation"
-                    value={formData.formation}
+                    id="service"
+                    name="service"
+                    value={formData.service}
                     onChange={handleChange}
                     className="w-full px-4 py-3 border-2 border-gray-200 rounded-lg focus:ring-2 focus:ring-[#46c0b5] focus:border-transparent transition-all outline-none"
                   >
-                    <option value="">Sélectionnez une formation</option>
-                    {formations.map((formation, index) => (
-                      <option key={index} value={formation}>
-                        {formation}
+                    <option value="">Sélectionnez un service</option>
+                    {services.map((service, index) => (
+                      <option key={index} value={service}>
+                        {service}
                       </option>
                     ))}
                   </select>
@@ -269,27 +269,27 @@ export default function Contact() {
                 <div className="space-y-6">
                   {[
                     {
-                      icon: "💬",
-                      title: "Conseils Personnalisés",
-                      description: "Obtenez des recommandations sur les formations adaptées",
+                      icon: "💼",
+                      title: "Conseil en Affaires",
+                      description: "Découvrez comment nous pouvons accompagner votre entreprise",
                       color: "#265b8f",
                     },
                     {
-                      icon: "📋",
-                      title: "Informations Détaillées",
-                      description: "Recevez toutes les informations sur nos programmes",
+                      icon: "👥",
+                      title: "Recrutement & GRH",
+                      description: "Trouvez les meilleurs talents pour votre organisation",
+                      color: "#46c0b5",
+                    },
+                    {
+                      icon: "🎓",
+                      title: "Formation Professionnelle",
+                      description: "Développez les compétences de vos équipes",
                       color: "#ac1f2c",
                     },
                     {
                       icon: "📅",
-                      title: "Planification",
-                      description: "Organisez une visite ou un rendez-vous",
-                      color: "#46c0b5",
-                    },
-                    {
-                      icon: "🎯",
-                      title: "Financement",
-                      description: "Découvrez les options de financement disponibles",
+                      title: "Rendez-vous Personnalisé",
+                      description: "Planifiez une rencontre pour discuter de vos besoins",
                       color: "#265b8f",
                     },
                   ].map((item, index) => (
@@ -319,16 +319,22 @@ export default function Contact() {
                 <h3 className="text-2xl font-bold mb-4">Liens Rapides</h3>
                 <div className="space-y-3">
                   <a
+                    href="/prestations"
+                    className="block p-3 bg-white/10 rounded-lg hover:bg-white/20 transition-all"
+                  >
+                    💼 Nos Prestations
+                  </a>
+                  <a
                     href="/formations"
                     className="block p-3 bg-white/10 rounded-lg hover:bg-white/20 transition-all"
                   >
-                    📚 Consulter nos formations
+                    📚 Nos Formations
                   </a>
                   <a
                     href="/a-propos"
                     className="block p-3 bg-white/10 rounded-lg hover:bg-white/20 transition-all"
                   >
-                    ℹ️ En savoir plus sur EXA
+                    ℹ️ À Propos d'EXA
                   </a>
                   <a
                     href="/"
@@ -385,28 +391,33 @@ export default function Contact() {
           <div className="max-w-4xl mx-auto space-y-4">
             {[
               {
-                question: "Comment puis-je m'inscrire à une formation ?",
-                answer: "Vous pouvez vous inscrire en remplissant le formulaire de contact ci-dessus ou en nous contactant directement par téléphone ou email.",
+                question: "Quels sont vos domaines d'expertise ?",
+                answer: "Nous offrons trois piliers de services : Conseil en Affaires et Accompagnement, Recrutement & Conseil en GRH, et Formation Professionnelle.",
                 color: "#265b8f",
               },
               {
-                question: "Quels sont les modes de paiement acceptés ?",
-                answer: "Nous acceptons les paiements par virement bancaire, chèque, et espèces. Des facilités de paiement sont disponibles.",
+                question: "Comment bénéficier de vos services de conseil ?",
+                answer: "Contactez-nous via le formulaire ou par téléphone pour discuter de vos besoins. Nous vous proposerons une solution personnalisée adaptée à votre entreprise.",
+                color: "#46c0b5",
+              },
+              {
+                question: "Proposez-vous des services de recrutement IT ?",
+                answer: "Oui, nous sommes spécialisés dans le recrutement IT et la gestion de carrière, ainsi que dans le conseil en GRH et l'audit RH.",
                 color: "#ac1f2c",
               },
               {
                 question: "Les formations sont-elles certifiantes ?",
-                answer: "Oui, toutes nos formations délivrent un certificat reconnu. Certaines offrent également des certifications internationales.",
-                color: "#46c0b5",
-              },
-              {
-                question: "Puis-je suivre les formations à distance ?",
-                answer: "Oui, nous proposons des formations en présentiel, en ligne ou en mode hybride selon vos préférences.",
+                answer: "Oui, toutes nos formations délivrent un certificat reconnu. Certaines offrent également des certifications professionnelles internationales comme le PMP.",
                 color: "#265b8f",
               },
               {
-                question: "Y a-t-il des prérequis pour les formations ?",
-                answer: "Les prérequis varient selon les formations. Contactez-nous pour obtenir des informations détaillées.",
+                question: "Quels sont les modes de paiement acceptés ?",
+                answer: "Nous acceptons les paiements par virement bancaire, chèque, et espèces. Des facilités de paiement sont disponibles sur demande.",
+                color: "#46c0b5",
+              },
+              {
+                question: "Travaillez-vous avec les startups ?",
+                answer: "Absolument ! Nous offrons un accompagnement spécialisé pour les startups, incluant le conseil, le recrutement et la formation adaptés à leurs besoins.",
                 color: "#ac1f2c",
               },
             ].map((faq, index) => (

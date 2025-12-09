@@ -49,27 +49,27 @@ export default function Home() {
 
   const features = [
     {
-      icon: "📊",
-      title: "PMS & Project Management",
-      description: "Maîtrisez les systèmes de gestion de projets et les méthodologies agiles",
+      icon: "💼",
+      title: "Conseil en Affaires",
+      description: "Création, gestion et développement des entreprises, audit, stratégie et accompagnement",
       color: "#265b8f",
     },
     {
-      icon: "🎯",
-      title: "Stratégie Business",
-      description: "Développez votre vision stratégique et vos compétences en management d'entreprise",
+      icon: "👥",
+      title: "Recrutement & GRH",
+      description: "Recrutement IT, conseil en GRH, audit RH et développement des compétences",
       color: "#ac1f2c",
+    },
+    {
+      icon: "🎓",
+      title: "Formation",
+      description: "Formations en management, coaching, leadership et développement professionnel",
+      color: "#46c0b5",
     },
     {
       icon: "🚀",
       title: "Accompagnement Startups",
-      description: "Formations adaptées aux besoins spécifiques des startups tunisiennes",
-      color: "#46c0b5",
-    },
-    {
-      icon: "💼",
-      title: "Compétences Managériales",
-      description: "Leadership, gestion d'équipe et outils de management moderne",
+      description: "Lancement et accompagnement des startups avec expertise business et stratégique",
       color: "#265b8f",
     },
   ];
@@ -181,9 +181,16 @@ export default function Home() {
                 {/* CTA Buttons - Larger & More Powerful */}
                 <div className="flex flex-col sm:flex-row gap-6 animate-fadeInUp mb-8" style={{ animationDelay: '0.6s' }}>
                   <Button 
-                    href="/formations" 
+                    href="/prestations" 
                     size="large" 
                     className="bg-[#46c0b5] text-white hover:bg-[#3aa89e] shadow-2xl transform hover:scale-110 hover:-translate-y-1 transition-all duration-300 text-xl lg:text-2xl px-12 py-6 lg:px-16 lg:py-7 font-black rounded-2xl"
+                  >
+                    💼 Nos Prestations
+                  </Button>
+                  <Button 
+                    href="/formations" 
+                    size="large" 
+                    className="bg-[#ac1f2c] text-white hover:bg-[#8d1924] shadow-2xl transform hover:scale-110 hover:-translate-y-1 transition-all duration-300 text-xl lg:text-2xl px-12 py-6 lg:px-16 lg:py-7 font-black rounded-2xl"
                   >
                     🎓 Nos Formations
                   </Button>

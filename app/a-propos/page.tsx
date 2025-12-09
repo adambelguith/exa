@@ -9,27 +9,27 @@ import Button from '../components/Button';
 export default function APropos() {
   const values = [
     {
-      icon: "📊",
-      title: "Expertise PMS",
-      description: "Spécialisation en Project Management System et méthodologies agiles",
+      icon: "💼",
+      title: "Conseil en Affaires",
+      description: "Accompagnement complet pour la création, gestion et développement de votre entreprise",
       color: "#265b8f",
     },
     {
-      icon: "🎯",
-      title: "Stratégie Business",
-      description: "Formations en stratégie d'entreprise et management adaptées au marché tunisien",
+      icon: "👥",
+      title: "Recrutement & GRH",
+      description: "Solutions complètes en recrutement IT, conseil RH et développement des compétences",
+      color: "#46c0b5",
+    },
+    {
+      icon: "🎓",
+      title: "Formation Professionnelle",
+      description: "Formations spécialisées en management, coaching, leadership et compétences professionnelles",
       color: "#ac1f2c",
     },
     {
       icon: "🚀",
-      title: "Focus Startups",
-      description: "Accompagnement spécialisé pour entrepreneurs et dirigeants de startups",
-      color: "#46c0b5",
-    },
-    {
-      icon: "💼",
-      title: "Compétences Managériales",
-      description: "Développement des compétences en leadership et gestion d'équipe",
+      title: "Innovation & Excellence",
+      description: "Des solutions modernes et innovantes pour accompagner votre transformation",
       color: "#265b8f",
     },
   ];
@@ -62,7 +62,7 @@ export default function APropos() {
       {
         year: "2014",
         title: "Création d'EXA",
-        description: "Lancement du centre de formation spécialisé en PMS et stratégie business pour startups en Tunisie",
+        description: "Lancement du centre spécialisé en conseil, recrutement et formation professionnelle en Tunisie",
         color: "#265b8f",
       },
     {
@@ -79,8 +79,8 @@ export default function APropos() {
     },
       {
         year: "2024",
-        title: "500+ Diplômés",
-        description: "Plus de 500 entrepreneurs et dirigeants formés en PMS et stratégie business, avec un taux de réussite de 85%",
+        title: "500+ Clients Satisfaits",
+        description: "Plus de 500 entreprises accompagnées avec nos services de conseil, recrutement et formation, avec un taux de satisfaction de 95%",
         color: "#265b8f",
       },
   ];
@@ -98,9 +98,9 @@ export default function APropos() {
               À Propos d'EXA
             </h1>
             <p className="text-xl opacity-90 leading-relaxed animate-fadeInUp">
-              Expert Skills Academy est un centre de formation spécialisé en <strong>PMS (Project Management System)</strong>, 
-              <strong>stratégie business</strong> et <strong>management</strong> pour startups en Tunisie. 
-              Nous formons les entrepreneurs et dirigeants de demain.
+              Expert Skills Academy est un centre spécialisé en <strong>conseil en affaires</strong>, 
+              <strong>recrutement & GRH</strong> et <strong>formation professionnelle</strong> en Tunisie. 
+              Nous accompagnons les entreprises et formons les leaders de demain.
             </p>
           </div>
         </div>
@@ -114,10 +114,10 @@ export default function APropos() {
               <div className="text-5xl mb-4">🎯</div>
               <h2 className="text-3xl font-bold text-[#265b8f] mb-4">Notre Vision</h2>
               <p className="text-gray-600 leading-relaxed">
-                Devenir le centre de formation de référence en <strong>PMS et stratégie business</strong> en Tunisie, 
-                reconnu pour l'excellence de nos programmes en management et le succès des startups que nous formons. 
-                Nous aspirons à créer un écosystème où chaque entrepreneur peut développer son plein potentiel 
-                et réussir sur le marché tunisien.
+                Devenir le partenaire de référence en <strong>conseil, recrutement et formation</strong> en Tunisie, 
+                reconnu pour l'excellence de nos services et le succès des entreprises que nous accompagnons. 
+                Nous aspirons à créer un écosystème où chaque entrepreneur et chaque entreprise peut développer son plein potentiel 
+                et réussir sur le marché tunisien et international.
               </p>
             </Card>
 
@@ -125,10 +125,10 @@ export default function APropos() {
               <div className="text-5xl mb-4">🚀</div>
               <h2 className="text-3xl font-bold text-[#ac1f2c] mb-4">Notre Mission</h2>
               <p className="text-gray-600 leading-relaxed">
-                Offrir des formations spécialisées en <strong>PMS, stratégie business et management</strong> de haute qualité, 
-                adaptées aux besoins spécifiques des <strong>startups tunisiennes</strong>. Nous nous engageons à accompagner 
-                chaque entrepreneur et dirigeant dans son parcours d'apprentissage, en mettant l'accent sur les compétences 
-                managériales et stratégiques essentielles pour réussir en Tunisie.
+                Offrir des services de <strong>conseil en affaires, recrutement & GRH et formation professionnelle</strong> de haute qualité, 
+                adaptés aux besoins spécifiques des <strong>entreprises tunisiennes</strong>. Nous nous engageons à accompagner 
+                chaque entreprise dans son développement, en mettant l'accent sur l'excellence opérationnelle, 
+                le capital humain et les compétences professionnelles essentielles pour réussir.
               </p>
             </Card>
           </div>
@@ -317,11 +317,11 @@ export default function APropos() {
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button
-              href="/formations"
+              href="/prestations"
               size="large"
               className="bg-white text-[#46c0b5] hover:bg-gray-100"
             >
-              Découvrir nos Formations
+              Découvrir nos Prestations
             </Button>
             <Button
               href="/contact"
