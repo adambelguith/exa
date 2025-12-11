@@ -33,7 +33,7 @@ export default function Contact() {
         name: '',
         email: '',
         phone: '',
-        service: '',
+        formation: '',
         message: '',
       });
     }, 3000);
@@ -203,17 +203,17 @@ export default function Contact() {
                 </div>
 
                 <div>
-                  <label htmlFor="service" className="block text-sm font-semibold text-gray-700 mb-2">
+                  <label htmlFor="formation" className="block text-sm font-semibold text-gray-700 mb-2">
                     Service d'intérêt
                   </label>
                   <select
-                    id="service"
-                    name="service"
-                    value={formData.service}
+                    id="formation"
+                    name="formation"
+                    value={formData.formation}
                     onChange={handleChange}
                     className="w-full px-4 py-3 border-2 border-gray-200 rounded-lg focus:ring-2 focus:ring-[#46c0b5] focus:border-transparent transition-all outline-none"
                   >
-                    <option value="">Sélectionnez un service</option>
+                    <option value="">Sélectionnez une formation</option>
                     {services.map((service, index) => (
                       <option key={index} value={service}>
                         {service}

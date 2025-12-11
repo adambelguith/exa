@@ -246,7 +246,7 @@ export default function Prestations() {
         </section>
       </AnimatedSection>
 
-      {/* Why Choose Our Services - Animated */}
+
       <AnimatedSection direction="right" color="#46c0b5">
         <section className="py-20 bg-gradient-to-b from-gray-50 to-white">
           <div className="container mx-auto px-4 lg:px-8">
