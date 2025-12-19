@@ -2,12 +2,12 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "EXA - Expert Skills Academy | Management PMS & Stratégie Business pour Startups",
+  title: "EXSA - Expert Skills Academy | Management PMS & Stratégie Business pour Startups",
   description: "Expert Skills Academy - Centre de formation spécialisé en PMS (Project Management System), stratégie business et management pour startups en Tunisie. Développez vos compétences en gestion de projets et stratégie d'entreprise.",
-  keywords: "PMS, Project Management System, gestion de projets, stratégie business, management, startups, formation Tunisie, EXA, Expert Skills Academy, formation professionnelle",
+  keywords: "PMS, Project Management System, gestion de projets, stratégie business, management, startups, formation Tunisie, EXSA, Expert Skills Academy, formation professionnelle",
   authors: [{ name: "Expert Skills Academy" }],
   openGraph: {
-    title: "EXA - Expert Skills Academy | PMS & Stratégie Business",
+    title: "EXSA - Expert Skills Academy | PMS & Stratégie Business",
     description: "Formation en management PMS et stratégie business pour startups en Tunisie",
     type: "website",
   },

@@ -1,10 +1,10 @@
-# EXA - Expert Skills Academy
+# EXSA - Expert Skills Academy
 
 Site web professionnel pour Expert Skills Academy, un centre de formation professionnelle moderne et innovant.
 
 ## 🎯 À Propos
 
-Expert Skills Academy (EXA) est un centre de formation dédié à l'excellence et au développement des compétences professionnelles. Notre site web présente nos offres de formation et notre expertise dans le domaine de la formation professionnelle.
+Expert Skills Academy (EXSA) est un centre de formation dédié à l'excellence et au développement des compétences professionnelles. Notre site web présente nos offres de formation et notre expertise dans le domaine de la formation professionnelle.
 
 ## ✨ Fonctionnalités
 
@@ -17,7 +17,7 @@ Expert Skills Academy (EXA) est un centre de formation dédié à l'excellence e
 
 ## 🎨 Palette de Couleurs
 
-Le site utilise la charte graphique officielle d'EXA :
+Le site utilise la charte graphique officielle d'EXSA :
 
 - **Rouge Principal** : `#ac1f2c` - Pour les éléments d'accent et appels à l'action
 - **Bleu Principal** : `#265b8f` - Pour les titres et éléments de structure
@@ -76,7 +76,7 @@ npm start
 ## 📁 Structure du Projet
 
 ```
-exa/
+exsa/
 ├── app/
 │   ├── components/         # Composants réutilisables
 │   │   ├── Navigation.tsx  # Navigation avec menu responsive
@@ -127,7 +127,7 @@ Pour personnaliser le site :
 1. **Couleurs** : Modifiez les variables CSS dans `app/globals.css`
 2. **Contenu** : Éditez directement les fichiers de page dans `app/`
 3. **Composants** : Ajoutez ou modifiez les composants dans `app/components/`
-4. **Logo** : Remplacez le logo dans la navigation (actuellement un placeholder EXA)
+4. **Logo** : Remplacez le logo dans la navigation (actuellement un placeholder EXSA)
 
 ## 🔜 Améliorations Futures
 
@@ -142,7 +142,7 @@ Pour personnaliser le site :
 ## 📧 Contact
 
 Pour toute question concernant le site :
-- Email : contact@exa-formation.com
+- Email : contact@exsa-formation.com
 - Téléphone : +212 522-123-456
 
 ## 📄 Licence

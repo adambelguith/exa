@@ -77,7 +77,7 @@ export default function AnimatedSection({
     <div ref={sectionRef} className={`relative overflow-hidden ${className}`}>
       {/* Colored Curtain Overlay */}
       <div
-        className="absolute inset-0 z-10 transition-all duration-1000 ease-out"
+        className="absolute inset-0 z-10 pointer-events-none transition-all duration-1000 ease-out"
         style={{
           backgroundColor: color,
           opacity: isVisible ? 0 : 1,

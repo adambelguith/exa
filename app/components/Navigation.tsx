@@ -19,7 +19,6 @@ export default function Navigation() {
   const navLinks = [
     { href: '/', label: 'Accueil' },
     { href: '/a-propos', label: 'À Propos' },
-    { href: '/prestations', label: 'Nos Prestations' },
     { href: '/formations', label: 'Nos Formations' },
     { href: '/contact', label: 'Contact' },
   ];
@@ -47,7 +46,6 @@ export default function Navigation() {
               <div className="text-xl font-bold bg-gradient-to-r from-[#ac1f2c] to-[#265b8f] bg-clip-text text-transparent">
                 Expert Skills Academy
               </div>
-              <div className="text-xs font-semibold text-[#265b8f]">PMS & Stratégie Business</div>
             </div>
           </Link>
 
