@@ -15,7 +15,8 @@ export default function Contact() {
     message: '',
   });
 
-  const [formStatus, setFormStatus] = useState<'idle' | 'success' | 'error'>('idle');
+  const [formStatus, setFormStatus] = useState<'idle' | 'loading' | 'success' | 'error'>('idle');
+  const [errorMessage, setErrorMessage] = useState('');
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
     setFormData({
@@ -24,11 +25,25 @@ export default function Contact() {
     });
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    setFormStatus('success');
-    setTimeout(() => {
-      setFormStatus('idle');
+    setFormStatus('loading');
+    setErrorMessage('');
+
+    try {
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
+      });
+
+      if (!response.ok) {
+        throw new Error('Failed to send message');
+      }
+
+      setFormStatus('success');
       setFormData({
         name: '',
         email: '',
@@ -36,54 +51,20 @@ export default function Contact() {
         formation: '',
         message: '',
       });
-    }, 3000);
-  };
 
-  const contactInfo = [
-    {
-      icon: (
-        <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
-        </svg>
-      ),
-      title: "Notre Adresse",
-      info: "3, Rue des amandes, Résidence Ryma, Khzema Est, Sousse, Tunisie",
-      color: "#265b8f",
-    },
-    {
-      icon: (
-        <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
-        </svg>
-      ),
-      title: "Téléphone / WhatsApp",
-      info: "+216 56 890 361 / +216 27 212 448",
-      color: "#46c0b5",
-    },
-    {
-      icon: (
-        <svg className="w-8 h-8" fill="currentColor" viewBox="0 0 24 24">
-          <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
-        </svg>
-      ),
-      title: "Facebook",
-      info: "EXSAexpertskillsacademy",
-      link: "https://www.facebook.com/EXSAexpertskillsacademy",
-      color: "#265b8f",
-    },
-    {
-      icon: (
-        <svg className="w-8 h-8" fill="currentColor" viewBox="0 0 24 24">
-          <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
-        </svg>
-      ),
-      title: "Instagram",
-      info: "@exsaconsulting25",
-      link: "https://www.instagram.com/exsaconsulting25",
-      color: "#ac1f2c",
-    },
-  ];
+      setTimeout(() => {
+        setFormStatus('idle');
+      }, 5000);
+    } catch (error) {
+      console.error('Error submitting form:', error);
+      setFormStatus('error');
+      setErrorMessage('Une erreur est survenue lors de l\'envoi du message. Veuillez réessayer.');
+      
+      setTimeout(() => {
+        setFormStatus('idle');
+      }, 5000);
+    }
+  };
 
   const services = [
     "Conseil en Affaires et Accompagnement",
@@ -112,43 +93,51 @@ export default function Contact() {
             <h1 className="text-5xl md:text-6xl font-bold mb-6 animate-fadeInUp">
               Contactez-Nous
             </h1>
-            <p className="text-xl opacity-90 leading-relaxed animate-fadeInUp">
-              Notre équipe est à votre écoute pour répondre à toutes vos questions
-              et vous accompagner dans votre projet de formation
+            <p className="text-xl opacity-90 leading-relaxed animate-fadeInUp mb-8">
+              Vous avez un projet, un besoin en compétences ou un objectif de montée en performance ?
+            </p>
+            <p className="text-2xl font-bold opacity-95 leading-relaxed animate-fadeInUp">
+              EXSA vous accompagne avec des solutions pratiques, flexibles et sur mesure, adaptées à votre réalité et à vos ambitions.
             </p>
           </div>
         </div>
       </section>
 
-      {/* Contact Info Cards */}
+      {/* What EXSA Offers Section */}
       <section className="py-20 bg-white">
         <div className="container mx-auto px-4 lg:px-8">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {contactInfo.map((item, index) => (
-              <Card key={index} className="text-center">
+          <SectionTitle
+            title="🎯 Que propose EXSA concrètement ?"
+            subtitle="Des formations et accompagnements à fort impact, conçus pour être immédiatement applicables"
+            accentColor="blue"
+          />
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-6 max-w-6xl mx-auto">
+            {[
+              { icon: "💼", title: "Management & leadership", color: "#265b8f" },
+              { icon: "🚀", title: "Entrepreneuriat & création de projets", color: "#ac1f2c" },
+              { icon: "📊", title: "Gestion de projets & performance", color: "#46c0b5" },
+              { icon: "💻", title: "Digital & transformation", color: "#265b8f" },
+              { icon: "🧠", title: "Soft skills & développement professionnel", color: "#ac1f2c" },
+            ].map((item, index) => (
+              <Card key={index} className="text-center hover:shadow-2xl transition-shadow">
                 <div 
-                  className="w-16 h-16 rounded-2xl flex items-center justify-center text-white mx-auto mb-4 shadow-lg"
+                  className="w-20 h-20 rounded-2xl flex items-center justify-center text-4xl mx-auto mb-4 shadow-lg transform hover:scale-110 transition-transform"
                   style={{ backgroundColor: item.color }}
                 >
                   {item.icon}
                 </div>
-                <h3 className="text-lg font-bold text-[#265b8f] mb-2">
+                <h3 className="text-base font-bold text-[#265b8f]">
                   {item.title}
                 </h3>
-                {item.link ? (
-                  <a 
-                    href={item.link}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-gray-600 text-sm hover:text-[#46c0b5] transition-colors"
-                  >
-                    {item.info}
-                  </a>
-                ) : (
-                  <p className="text-gray-600 text-sm">{item.info}</p>
-                )}
               </Card>
             ))}
+          </div>
+
+          <div className="text-center mt-12">
+            <p className="text-2xl font-bold text-[#ac1f2c]">
+              👉 Pas de théorie inutile. Des résultats mesurables.
+            </p>
           </div>
         </div>
       </section>
@@ -166,7 +155,7 @@ export default function Contact() {
                 accentColor="teal"
               />
 
-              <form onSubmit={handleSubmit} className="space-y-6">
+              <form onSubmit={handleSubmit} className="space-y-6" id="contact-form">
                 <div>
                   <label htmlFor="name" className="block text-sm font-semibold text-gray-700 mb-2">
                     Nom Complet *
@@ -260,11 +249,31 @@ export default function Contact() {
                   </div>
                 )}
 
+                {formStatus === 'error' && (
+                  <div className="bg-red-50 border-2 border-red-200 text-red-700 px-4 py-3 rounded-lg flex items-center">
+                    <svg className="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12" />
+                    </svg>
+                    {errorMessage}
+                  </div>
+                )}
+
                 <button
                   type="submit"
-                  className="w-full bg-[#46c0b5] text-white px-8 py-4 rounded-lg font-semibold hover:bg-[#3aa89e] transform hover:scale-105 transition-all duration-300 shadow-lg"
+                  disabled={formStatus === 'loading'}
+                  className="w-full bg-[#46c0b5] text-white px-8 py-4 rounded-lg font-semibold hover:bg-[#3aa89e] transform hover:scale-105 transition-all duration-300 shadow-lg disabled:opacity-50 disabled:cursor-not-allowed disabled:transform-none"
                 >
-                  Envoyer le Message
+                  {formStatus === 'loading' ? (
+                    <span className="flex items-center justify-center">
+                      <svg className="animate-spin -ml-1 mr-3 h-5 w-5 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                        <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
+                        <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                      </svg>
+                      Envoi en cours...
+                    </span>
+                  ) : (
+                    'Envoyer le Message'
+                  )}
                 </button>
               </form>
             </div>
@@ -273,8 +282,8 @@ export default function Contact() {
             <div className="space-y-8">
               <div className="bg-white p-8 rounded-2xl shadow-lg">
                 <SectionTitle
-                  title="Pourquoi Nous Contacter ?"
-                  subtitle="Nous sommes là pour vous aider"
+                  title="📝 Comment s'inscrire ou démarrer ?"
+                  subtitle="C'est simple et rapide"
                   centered={false}
                   accentColor="blue"
                 />
@@ -282,28 +291,22 @@ export default function Contact() {
                 <div className="space-y-6">
                   {[
                     {
-                      icon: "💼",
-                      title: "Conseil en Affaires",
-                      description: "Découvrez comment nous pouvons accompagner votre entreprise",
+                      icon: "1️⃣",
+                      title: "Vous remplissez le formulaire de contact",
+                      description: "Décrivez votre besoin, projet ou objectif de formation",
                       color: "#265b8f",
                     },
                     {
-                      icon: "👥",
-                      title: "Recrutement & GRH",
-                      description: "Trouvez les meilleurs talents pour votre organisation",
+                      icon: "2️⃣",
+                      title: "Un expert EXSA analyse votre besoin",
+                      description: "Nous étudions votre profil et vos objectifs",
                       color: "#46c0b5",
                     },
                     {
-                      icon: "🎓",
-                      title: "Formation Professionnelle",
-                      description: "Développez les compétences de vos équipes",
+                      icon: "3️⃣",
+                      title: "Nous vous orientons vers la solution la plus adaptée",
+                      description: "Formation sur mesure ou parcours complet personnalisé",
                       color: "#ac1f2c",
-                    },
-                    {
-                      icon: "📅",
-                      title: "Rendez-vous Personnalisé",
-                      description: "Planifiez une rencontre pour discuter de vos besoins",
-                      color: "#265b8f",
                     },
                   ].map((item, index) => (
                     <div
@@ -325,30 +328,35 @@ export default function Contact() {
                     </div>
                   ))}
                 </div>
+
+                <div className="mt-6 p-4 bg-[#46c0b5]/10 rounded-lg border-l-4 border-[#46c0b5]">
+                  <p className="text-[#265b8f] font-bold">
+                    ⏱️ Réponse rapide – accompagnement personnalisé dès le premier contact.
+                  </p>
+                </div>
               </div>
 
-              {/* Quick Links */}
-              <Card className="bg-[#265b8f] text-white">
-                <h3 className="text-2xl font-bold mb-4">Liens Rapides</h3>
+              {/* Contact Info */}
+              <Card className="bg-[#265b8f] text-[#265b8f]">
+                <h3 className="text-2xl font-bold mb-4">📞 Nous Contacter</h3>
                 <div className="space-y-3">
                   <a
-                    href="/formations"
+                    href="https://wa.me/21656890361"
+                    target="_blank"
+                    rel="noopener noreferrer"
                     className="block p-3 bg-white/10 rounded-lg hover:bg-white/20 transition-all"
                   >
-                    📚 Nos Formations
+                    � WhatsApp: +216 56 890 361
                   </a>
                   <a
-                    href="/a-propos"
+                    href="tel:+21627212448"
                     className="block p-3 bg-white/10 rounded-lg hover:bg-white/20 transition-all"
                   >
-                    ℹ️ À Propos d'EXSA
+                    📱 Téléphone: +216 27 212 448
                   </a>
-                  <a
-                    href="/"
-                    className="block p-3 bg-white/10 rounded-lg hover:bg-white/20 transition-all"
-                  >
-                    🏠 Retour à l'accueil
-                  </a>
+                  <div className="p-3 bg-white/10 rounded-lg">
+                    📍 3, Rue des amandes, Résidence Ryma, Khzema Est, Sousse
+                  </div>
                 </div>
               </Card>
             </div>
@@ -356,79 +364,131 @@ export default function Contact() {
         </div>
       </section>
 
-      {/* Map Section */}
+      {/* What to Expect Section */}
       <section className="py-20 bg-white">
         <div className="container mx-auto px-4 lg:px-8">
           <SectionTitle
-            title="Trouvez-nous"
-            subtitle="Visitez notre centre de formation"
-            accentColor="red"
+            title="🧠 À quoi s'attendre après votre inscription ?"
+            accentColor="teal"
           />
 
-          <div className="bg-[#ecf6fd] rounded-2xl shadow-xl overflow-hidden border-4 border-[#46c0b5]">
-            <iframe
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3239.8!2d10.6!3d35.83!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMzXCsDQ5JzQ2LjgiTiAxMMKwMzYnMDAuMCJF!5e0!3m2!1sen!2stn!4v1234567890"
-              width="100%"
-              height="450"
-              style={{ border: 0 }}
-              allowFullScreen
-              loading="lazy"
-              referrerPolicy="no-referrer-when-downgrade"
-              title="EXSA Location - 3, Rue des amandes, Résidence Ryma, Khzema Est, Sousse, Tunisie"
-            ></iframe>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto">
+            {[
+              {
+                icon: "🎯",
+                title: "Un parcours adapté",
+                description: "À votre niveau et à vos objectifs",
+                color: "#265b8f",
+              },
+              {
+                icon: "💼",
+                title: "Des cas réels",
+                description: "Et des outils professionnels",
+                color: "#46c0b5",
+              },
+              {
+                icon: "🤝",
+                title: "Un suivi personnalisé",
+                description: "Et un coaching adapté",
+                color: "#ac1f2c",
+              },
+              {
+                icon: "⚡",
+                title: "Compétences exploitables",
+                description: "Directement sur le terrain",
+                color: "#265b8f",
+              },
+            ].map((item, index) => (
+              <Card key={index} className="text-center">
+                <div 
+                  className="w-20 h-20 rounded-2xl flex items-center justify-center text-4xl mx-auto mb-4 shadow-lg"
+                  style={{ backgroundColor: item.color }}
+                >
+                  {item.icon}
+                </div>
+                <h3 className="text-xl font-bold text-[#265b8f] mb-2">
+                  {item.title}
+                </h3>
+                <p className="text-gray-600 text-sm">{item.description}</p>
+              </Card>
+            ))}
           </div>
         </div>
       </section>
 
-      {/* FAQ Section */}
+      {/* Payment & Flexibility Section */}
       <section className="py-20 bg-[#ecf6fd]">
         <div className="container mx-auto px-4 lg:px-8">
           <SectionTitle
-            title="Questions Fréquentes"
-            subtitle="Trouvez rapidement des réponses à vos questions"
+            title="💳 Paiement & flexibilité"
+            subtitle="Parce que chaque situation est différente"
             accentColor="teal"
           />
 
-          <div className="max-w-4xl mx-auto space-y-4">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
             {[
               {
-                question: "Quels sont vos domaines d'expertise ?",
-                answer: "Nous offrons trois piliers de services : Conseil en Affaires et Accompagnement, Recrutement & Conseil en GRH, et Formation Professionnelle.",
+                icon: "💰",
+                title: "Paiement flexible",
+                description: "Options de paiement adaptées à votre situation financière",
                 color: "#265b8f",
               },
               {
-                question: "Comment bénéficier de vos services de conseil ?",
-                answer: "Contactez-nous via le formulaire ou par téléphone pour discuter de vos besoins. Nous vous proposerons une solution personnalisée adaptée à votre entreprise.",
+                icon: "🎓",
+                title: "Solutions adaptées",
+                description: "Pour étudiants, startups et entreprises",
                 color: "#46c0b5",
               },
               {
-                question: "Proposez-vous des services de recrutement IT ?",
-                answer: "Oui, nous sommes spécialisés dans le recrutement IT et la gestion de carrière, ainsi que dans le conseil en GRH et l'audit RH.",
+                icon: "🧩",
+                title: "Formations modulaires",
+                description: "Ou parcours complets selon vos besoins",
                 color: "#ac1f2c",
               },
-              {
-                question: "Les formations sont-elles certifiantes ?",
-                answer: "Oui, toutes nos formations délivrent un certificat reconnu. Certaines offrent également des certifications professionnelles internationales comme le PMP.",
-                color: "#265b8f",
-              },
-              {
-                question: "Quels sont les modes de paiement acceptés ?",
-                answer: "Nous acceptons les paiements par virement bancaire, chèque, et espèces. Des facilités de paiement sont disponibles sur demande.",
-                color: "#46c0b5",
-              },
-              {
-                question: "Travaillez-vous avec les startups ?",
-                answer: "Absolument ! Nous offrons un accompagnement spécialisé pour les startups, incluant le conseil, le recrutement et la formation adaptés à leurs besoins.",
-                color: "#ac1f2c",
-              },
-            ].map((faq, index) => (
-              <Card key={index} className="border-l-4" style={{ borderColor: faq.color }}>
-                <h3 className="text-lg font-bold text-[#265b8f] mb-3">
-                  {faq.question}
+            ].map((item, index) => (
+              <Card key={index} className="text-center">
+                <div 
+                  className="w-20 h-20 rounded-2xl flex items-center justify-center text-4xl mx-auto mb-4 shadow-lg"
+                  style={{ backgroundColor: item.color }}
+                >
+                  {item.icon}
+                </div>
+                <h3 className="text-xl font-bold text-[#265b8f] mb-3">
+                  {item.title}
                 </h3>
-                <p className="text-gray-600">{faq.answer}</p>
+                <p className="text-gray-600">{item.description}</p>
               </Card>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Enterprise Section */}
+      <section className="py-20 bg-white">
+        <div className="container mx-auto px-4 lg:px-8">
+          <div className="max-w-4xl mx-auto">
+            <Card className="bg-gradient-to-r from-[#265b8f] to-[#1e4a72] text-white p-8 md:p-12">
+              <div className="text-center">
+                <div className="text-6xl mb-6">🏢</div>
+                <h2 className="text-3xl md:text-4xl font-bold mb-6">
+                  Entreprises & équipes
+                </h2>
+                <p className="text-xl leading-relaxed mb-4">
+                  Vous souhaitez former ou accompagner votre équipe ?
+                </p>
+                <p className="text-lg leading-relaxed opacity-90">
+                  EXSA conçoit des programmes sur mesure, alignés sur vos enjeux stratégiques, votre secteur d'activité et vos objectifs de performance.
+                </p>
+                <div className="mt-8">
+                  <a
+                    href="#contact-form"
+                    className="inline-block bg-white text-[#265b8f] px-8 py-4 rounded-lg font-bold hover:bg-gray-100 transform hover:scale-105 transition-all duration-300 shadow-lg"
+                  >
+                    Demander un devis entreprise
+                  </a>
+                </div>
+              </div>
+            </Card>
           </div>
         </div>
       </section>
