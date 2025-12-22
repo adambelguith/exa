@@ -210,7 +210,7 @@ export default function Home() {
                 </div> */}
 
                 {/* Main Heading - MASSIVE */}
-                <h1 className="text-3xl lg:text-6xl xl:text-7xl font-black text-white mb-6 lg:mb-8 leading-[1.1] animate-fadeInUp transform hover:scale-[1.02] transition-transform duration-500" style={{ animationDelay: '0.2s' }}>
+                <h1 className="text-4xl lg:text-6xl xl:text-7xl font-black text-white mb-20 lg:mb-24 leading-[1.1] animate-fadeInUp transform hover:scale-[1.02] transition-transform duration-500" style={{ animationDelay: '0.2s' }}>
                   Expert Skills<br />
                   <span className="text-[#46c0b5] drop-shadow-2xl">Academy</span>
                 </h1>
