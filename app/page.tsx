@@ -198,7 +198,7 @@ export default function Home() {
               
               <div className="relative z-10 max-w-3xl">
 
-                <div className="animate-fadeInUp mb-4 lg:mb-6" style={{ animationDelay: '0.15s' }}>
+                {/* <div className="animate-fadeInUp mb-4 lg:mb-6" style={{ animationDelay: '0.15s' }}>
                   <Image
                     src="/logo-white.png"
                     alt="EXSA"
@@ -207,10 +207,10 @@ export default function Home() {
                     priority
                     className="h-16 w-auto lg:h-24 drop-shadow-2xl"
                   />
-                </div>
+                </div> */}
 
                 {/* Main Heading - MASSIVE */}
-                <h1 className="text-3xl lg:text-5xl xl:text-6xl font-black text-white mb-6 lg:mb-8 leading-[1.1] animate-fadeInUp transform hover:scale-[1.02] transition-transform duration-500" style={{ animationDelay: '0.2s' }}>
+                <h1 className="text-3xl lg:text-6xl xl:text-7xl font-black text-white mb-6 lg:mb-8 leading-[1.1] animate-fadeInUp transform hover:scale-[1.02] transition-transform duration-500" style={{ animationDelay: '0.2s' }}>
                   Expert Skills<br />
                   <span className="text-[#46c0b5] drop-shadow-2xl">Academy</span>
                 </h1>

@@ -33,7 +33,6 @@ export default function Formations() {
       description: "Étude de marché, validation d'idée, Business Model Canvas (BMC), business plan, cadre juridique & administratif, lancement et développement de projet",
       duration: "Variable",
       level: "Tous niveaux",
-      price: "Sur demande",
       modules: ["Étude de marché", "Business Model Canvas", "Business plan", "Cadre juridique", "Lancement de projet"],
       color: "#265b8f",
       icon: "🚀",
@@ -44,7 +43,6 @@ export default function Formations() {
       description: "Gestion d'entreprise, management stratégique, pilotage de la performance, contrôle de gestion, organisation & gouvernance",
       duration: "Variable",
       level: "Tous niveaux",
-      price: "Sur demande",
       modules: ["Gestion d'entreprise", "Management stratégique", "Pilotage de la performance", "Contrôle de gestion", "Gouvernance"],
       color: "#ac1f2c",
       icon: "💼",
@@ -55,7 +53,6 @@ export default function Formations() {
       description: "Création de boutiques en ligne, digital marketing, branding digital, automatisation, outils digitaux & IA",
       duration: "Variable",
       level: "Tous niveaux",
-      price: "Sur demande",
       modules: ["E-commerce", "Digital marketing", "Branding digital", "Automatisation", "Outils IA"],
       color: "#46c0b5",
       icon: "🛒",
@@ -66,7 +63,6 @@ export default function Formations() {
       description: "Gestion des talents, recrutement & intégration, GPEC, SIRH, évaluation de performance, audit social",
       duration: "Variable",
       level: "Tous niveaux",
-      price: "Sur demande",
       modules: ["Gestion des talents", "Recrutement", "GPEC", "SIRH", "Évaluation de performance"],
       color: "#265b8f",
       icon: "👥",
@@ -77,7 +73,6 @@ export default function Formations() {
       description: "Budget, trésorerie, gestion financière, contrôle de gestion, structuration administrative",
       duration: "Variable",
       level: "Tous niveaux",
-      price: "Sur demande",
       modules: ["Budget", "Trésorerie", "Gestion financière", "Contrôle de gestion", "Structuration administrative"],
       color: "#ac1f2c",
       icon: "💰",
@@ -88,7 +83,6 @@ export default function Formations() {
       description: "Pitch deck investisseurs, présentation de projets, storytelling, communication professionnelle",
       duration: "Variable",
       level: "Tous niveaux",
-      price: "Sur demande",
       modules: ["Pitch deck", "Présentation de projets", "Storytelling", "Communication professionnelle"],
       color: "#46c0b5",
       icon: "🎤",
@@ -99,7 +93,6 @@ export default function Formations() {
       description: "Risk management, gestion de crises, continuité d'activité, analyse SWOT",
       duration: "Variable",
       level: "Intermédiaire à Avancé",
-      price: "Sur demande",
       modules: ["Risk management", "Gestion de crises", "Continuité d'activité", "Analyse SWOT"],
       color: "#265b8f",
       icon: "⚠️",
@@ -110,7 +103,6 @@ export default function Formations() {
       description: "ISO 9001 (SMQ), ISO 27000, qualité, conformité, amélioration continue",
       duration: "Variable",
       level: "Intermédiaire à Avancé",
-      price: "Sur demande",
       modules: ["ISO 9001", "ISO 27000", "Qualité", "Conformité", "Amélioration continue"],
       color: "#ac1f2c",
       icon: "📋",
@@ -121,7 +113,6 @@ export default function Formations() {
       description: "Stratégie marketing, marketing digital, techniques de vente, négociation commerciale",
       duration: "Variable",
       level: "Tous niveaux",
-      price: "Sur demande",
       modules: ["Stratégie marketing", "Marketing digital", "Techniques de vente", "Négociation commerciale"],
       color: "#46c0b5",
       icon: "📱",
@@ -132,7 +123,6 @@ export default function Formations() {
       description: "Digitalisation des processus, systèmes d'information, outils IA, TIC",
       duration: "Variable",
       level: "Tous niveaux",
-      price: "Sur demande",
       modules: ["Digitalisation", "Systèmes d'information", "Outils IA", "TIC"],
       color: "#265b8f",
       icon: "💻",
@@ -143,7 +133,6 @@ export default function Formations() {
       description: "Leadership, intelligence émotionnelle, communication, gestion d'équipe, développement personnel",
       duration: "Variable",
       level: "Tous niveaux",
-      price: "Sur demande",
       modules: ["Leadership", "Intelligence émotionnelle", "Communication", "Gestion d'équipe", "Développement personnel"],
       color: "#ac1f2c",
       icon: "🧠",
@@ -154,7 +143,6 @@ export default function Formations() {
       description: "Langues appliquées au business et au monde professionnel (communication, négociation, contexte entreprise)",
       duration: "Variable",
       level: "Tous niveaux",
-      price: "Sur demande",
       modules: ["Communication professionnelle", "Négociation", "Contexte entreprise", "Business language"],
       color: "#46c0b5",
       icon: "🌍",
@@ -253,13 +241,6 @@ export default function Formations() {
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
                       </svg>
                       <span className="font-semibold">Niveau:</span>&nbsp;{formation.level}
-                    </div>
-
-                    <div className="flex items-center text-sm text-gray-600">
-                      <svg className="w-5 h-5 mr-2 text-[#46c0b5]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-                      </svg>
-                      <span className="font-semibold">Prix:</span>&nbsp;{formation.price}
                     </div>
                   </div>
 

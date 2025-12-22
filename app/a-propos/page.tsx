@@ -42,17 +42,17 @@ export default function APropos() {
     },
     {
       icon: "🏢",
-      title: "PME & entreprises",
+      title: "PME",
       color: "#ac1f2c",
     },
     {
       icon: "👤",
-      title: "Particuliers & professionnels",
+      title: "Etudiants & professionnels",
       color: "#46c0b5",
     },
     {
       icon: "🌍",
-      title: "ONG & organisations",
+      title: "ONG",
       color: "#265b8f",
     },
   ];

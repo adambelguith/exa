@@ -11,7 +11,7 @@ export default function Footer() {
           <div>
             <div className="flex items-center space-x-3 mb-4">
               <img 
-                src="/logo.png" 
+                src="/logo-white.png" 
                 alt="EXSA Logo" 
                 className="w-16 h-16 object-contain filter drop-shadow-lg"
               />
