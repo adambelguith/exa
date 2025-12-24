@@ -11,7 +11,7 @@ export const metadata: Metadata = {
     url: "https://www.exsa.tn/formations",
     images: [
       {
-        url: "/logo-white.png",
+        url: "/logo.png",
         width: 1200,
         height: 630,
         alt: "Formations EXSA - Expert Skills Academy Tunisie",

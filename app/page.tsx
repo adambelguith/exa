@@ -70,7 +70,7 @@ export default function Home() {
   }, [checklistItems.length]);
 
   const stats = [
-    { number: "500+", label: "Porteurs de Projets, PMS, Startups", color: "#ac1f2c" },
+    { number: "500+", label: "Porteurs de Projets, PME, Startups", color: "#ac1f2c" },
     { number: "30+", label: "Formations Disponibles", color: "#265b8f" },
     { number: "95%", label: "Taux de Satisfaction", color: "#46c0b5" },
     { number: "10+", label: "Années d'Expérience", color: "#ac1f2c" },

@@ -1,7 +1,7 @@
 import { Resend } from 'resend';
 import { NextResponse } from 'next/server';
 
-const resend = new Resend("re_NMnZnzVM_Lg1QVFU87TLUC7LWhza97mU5");
+const resend = new Resend("re_HLTVAzKp_5QSxJySebmi6CMuofMfuFSNe");
 
 export async function POST(request: Request) {
   try {
@@ -17,7 +17,7 @@ export async function POST(request: Request) {
 
     const data = await resend.emails.send({
       from: 'EXSA Contact Form <onboarding@resend.dev>',
-      to: 'adambelguith8@gmail.com',
+      to: 'exsaformation@gmail.com',
       replyTo: email,
       subject: `Nouveau message de contact - ${name}`,
       html: `
