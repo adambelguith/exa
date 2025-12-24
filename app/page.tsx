@@ -264,14 +264,12 @@ export default function Home() {
                   >
                     🎓 Nos Formations
                   </Button>
-                  <Button 
+                  <a 
                     href="/contact" 
-                    variant="outline" 
-                    size="large" 
-                    className="border-4 border-white text-white hover:bg-white hover:text-[#265b8f] shadow-2xl transform hover:scale-110 hover:-translate-y-1 transition-all duration-300 text-lg lg:text-2xl px-8 py-4 lg:px-16 lg:py-7 font-black rounded-2xl"
+                    className="border-4 border-white text-white hover:bg-white hover:text-[#ac1f2c] shadow-2xl transform hover:scale-110 hover:-translate-y-1 transition-all duration-300 text-lg lg:text-2xl px-8 py-4 lg:px-16 lg:py-7 font-black rounded-2xl inline-block text-center"
                   >
                     📞 Contact
-                  </Button>
+                  </a>
                 </div>
 
               </div>

@@ -1,0 +1,29 @@
+{
+  "name": "EXSA - Expert Skills Academy",
+  "short_name": "EXSA Academy",
+  "description": "Centre de formation N°1 en Tunisie. Formations certifiées en entrepreneuriat, business management, e-commerce, digital marketing, gestion de projet.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#1e40af",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "/logo.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/logo.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ],
+  "categories": ["education", "business", "training"],
+  "lang": "fr-TN",
+  "dir": "ltr",
+  "scope": "/",
+  "screenshots": []
+}
